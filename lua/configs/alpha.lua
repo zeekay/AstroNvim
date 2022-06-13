@@ -7,12 +7,6 @@ if status_ok then
       {
         type = "text",
         val = astronvim.user_plugin_opts("header", {
-          " █████  ███████ ████████ ██████   ██████",
-          "██   ██ ██         ██    ██   ██ ██    ██",
-          "███████ ███████    ██    ██████  ██    ██",
-          "██   ██      ██    ██    ██   ██ ██    ██",
-          "██   ██ ███████    ██    ██   ██  ██████",
-          " ",
           "    ███    ██ ██    ██ ██ ███    ███",
           "    ████   ██ ██    ██ ██ ████  ████",
           "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
@@ -21,7 +15,7 @@ if status_ok then
         }, false),
         opts = { position = "center", hl = "DashboardHeader" },
       },
-      { type = "padding", val = 5 },
+      { type = "padding", val = 4 },
       {
         type = "group",
         val = {

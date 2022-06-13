@@ -60,6 +60,17 @@ if is_available "Comment.nvim" then
     "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
     { desc = "Toggle comment line" }
   )
+
+  -- vim-commentary aliases
+  map("n", "\\\\\\", function()
+    require("Comment.api").toggle_current_linewise()
+  end, { desc = "Comment line" })
+  map(
+    "v",
+    "\\\\\\",
+    "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
+    { desc = "Toggle comment line" }
+  )
 end
 
 -- GitSigns
@@ -97,6 +108,7 @@ end
 if is_available "neo-tree.nvim" then
   map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
   map("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus Explorer" })
+  map("n", "\\n", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
 end
 
 -- Session Manager
@@ -268,3 +280,9 @@ map("t", "<C-h>", "<c-\\><c-n><c-w>h", { desc = "Terminal left window navigation
 map("t", "<C-j>", "<c-\\><c-n><c-w>j", { desc = "Terminal down window navigation" })
 map("t", "<C-k>", "<c-\\><c-n><c-w>k", { desc = "Terminal up window navigation" })
 map("t", "<C-l>", "<c-\\><c-n><c-w>l", { desc = "Terminal right window naviation" })
+
+-- Backwards compat with my brain
+map("n", "J", "<c-d>", { desc = "PageDown" })
+map("n", "K", "<c-u>", { desc = "PageUp" })
+map("n", "\\q", "<cmd>q<cr>", { desc = "Quit" })
+map("n", "\\w", "<C-w>", { desc = "Window commands" })
